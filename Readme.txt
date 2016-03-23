@@ -1,6 +1,10 @@
 Camus Tristan
 Cojez Arnaud
 
+Q3.
+  Car le sol n'a pas de vertex ?
+  Et que si on calcule par pixels le sol est éclairé partout.
+
 Doit contenir :
 - ce que vous n'avez pas fait (et pourquoi). Précisez explicitement "tout à été fait et fonctionne parfaitement" si c'est le cas.
 - difficultés rencontrées.
