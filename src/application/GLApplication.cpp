@@ -186,7 +186,10 @@ void GLApplication::update() {
   }
 
   _textureEyeMatrix.setIdentity();
+  //P3E1Q7
+  _textureEyeMatrix.translate(4,0,0);
 
+  _textureEyeMatrix.rotate(_moveAngle,0,0,1);
 
   if (keyPressed(Qt::Key_A)) {
     _animate=!_animate;
