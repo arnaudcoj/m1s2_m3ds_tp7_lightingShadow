@@ -116,8 +116,8 @@ void GLApplication::initialize() {
   _univLille1.generateMipmap();
   _univLille1.bind(1);
 
-  //_univLille1.wrap(GL_CLAMP_TO_EDGE);
-  _univLille1.wrap(GL_REPEAT);
+  _univLille1.wrap(GL_CLAMP_TO_BORDER);
+  //_univLille1.wrap(GL_REPEAT);
 
 
 
