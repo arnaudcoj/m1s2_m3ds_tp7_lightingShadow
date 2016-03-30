@@ -23,7 +23,7 @@ void main() {
   //fTexCoord=vec4(position,1);
 
   //P3E1Q5-2
-  fTexCoord=positionEye;
+  //fTexCoord=positionEye;
 
   //P3E1Q6
   fTexCoord=textureEyeMatrix * positionEye;
