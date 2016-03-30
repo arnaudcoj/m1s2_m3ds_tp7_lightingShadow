@@ -24,4 +24,8 @@ void main() {
 
   //P3E1Q5-2
   fTexCoord=positionEye;
+
+  //P3E1Q6
+  fTexCoord=textureEyeMatrix * positionEye;
+
 }
