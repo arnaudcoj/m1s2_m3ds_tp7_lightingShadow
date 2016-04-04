@@ -1,6 +1,8 @@
 Camus Tristan
 Cojez Arnaud
 
+Le TP s'est déroulé sans problème et nous avons répondu à toutes les questions.
+
 Q3.
   Car le sol n'a pas de vertex ?
   Et que si on calcule par pixels le sol est éclairé partout.
@@ -16,11 +18,6 @@ P3.E1.Q4.
 P3.E1.Q5.
   * Chaque objet a son propre repère. Donc ils ne partagent pas la même position.
   * L'image est projetée par rapport à partir de la caméra. Ce test est intéressant car il faut projeter l'image à partir du projecteur, donc il faut utiliser le même principe mais avec la position du projecteur.
-
-Doit contenir :
-- ce que vous n'avez pas fait (et pourquoi). Précisez explicitement "tout à été fait et fonctionne parfaitement" si c'est le cas.
-- difficultés rencontrées.
-- commentaires éventuels sur le TP (points à éclaircir, longueur du sujet, etc).
 
 P3.E2.Q6.
 depthMap : fragColor.r correspond à la distance entre la source lumineuse et le pixel de l'objet le plus proche de cette source (ce qui explique pourquoi l'avion est plus sombre et la voiture plus claire)
