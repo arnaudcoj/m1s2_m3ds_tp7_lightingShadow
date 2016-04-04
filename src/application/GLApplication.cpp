@@ -185,11 +185,12 @@ void GLApplication::update() {
     _projectorMatrix.mul(Matrix4::fromAngleAxis(deltaMouseY()*2,Vector3(1,0,0)));
   }
 
-  _textureEyeMatrix.setIdentity();
   //P3E1Q7
-  _textureEyeMatrix.translate(4,0,0);
+  //_textureEyeMatrix.translate(4,0,0);
+  //_textureEyeMatrix.rotate(_moveAngle,0,0,1);
 
-  _textureEyeMatrix.rotate(_moveAngle,0,0,1);
+  //P3E1Q10
+  _textureEyeMatrix = _projectorMatrix.inverse() * _camera.worldLocal ();
 
   if (keyPressed(Qt::Key_A)) {
     _animate=!_animate;
