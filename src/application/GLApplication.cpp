@@ -193,7 +193,7 @@ void GLApplication::update() {
     _textureEyeMatrix = _projectorMatrix.inverse() * _camera.worldLocal();
 
     //P3E1Q11
-    _textureEyeMatrix = Matrix4::fromFrustum(-0.02,0.02,-0.02,0.02,0.1,100) * _textureEyeMatrix;
+    _textureEyeMatrix = Matrix4::fromFrustum(-0.02,0.02,-0.02,0.02,0.1,100) * _textureEyeMatrix ;
 
     if (keyPressed(Qt::Key_A)) {
         _animate=!_animate;
@@ -270,8 +270,15 @@ void GLApplication::renderToTexture() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     //P3E2Q3
-    p3d::projectionMatrix=_camera.projectionMatrix();
-    p3d::modelviewMatrix=_camera.localWorld();
+    p3d::projectionMatrix = _camera.projectionMatrix().fromFrustum(-0.02,0.02,-0.02,0.02,0.1,100);
+    p3d::modelviewMatrix = _projectorMatrix.inverse();
+/*
+
+    _textureEyeMatrix = _projectorMatrix.inverse() * _camera.worldLocal();
+
+    //P3E1Q11
+    _textureEyeMatrix = Matrix4::fromFrustum(-0.02,0.02,-0.02,0.02,0.1,100) * _textureEyeMatrix;
+*/
     _currentShader=&_perVertexLighting;
     // les tracés qui suivent se feront avec le shader _perVertexLighting (premier exercice)
     // on trace toute la scène dans la rtt sauf le projecteur :
