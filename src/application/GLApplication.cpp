@@ -190,7 +190,10 @@ void GLApplication::update() {
   //_textureEyeMatrix.rotate(_moveAngle,0,0,1);
 
   //P3E1Q10
-  _textureEyeMatrix = _projectorMatrix.inverse() * _camera.worldLocal ();
+  _textureEyeMatrix = _projectorMatrix.inverse() * _camera.worldLocal();
+
+  //P3E1Q11
+  _textureEyeMatrix = Matrix4::fromFrustum(-0.02,0.02,-0.02,0.02,0.1,100) * _textureEyeMatrix;
 
   if (keyPressed(Qt::Key_A)) {
     _animate=!_animate;
