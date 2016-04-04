@@ -14,8 +14,10 @@ void main() {
   texCoord.xyz += 1.;
   texCoord.xyz /= 2.;
 
-  if(texCoord.z>=-1 && texCoord.z<=1)
+  if(texCoord.z>=-1 && texCoord.z<=1) {
     fragColor=texture(depthTexture,texCoord.xy);
+    fragColor=1.0-clamp(50.0*(1.0-fragColor),0,1);
+  }
   else
     fragColor=vec4(0,0,0,0);
 }

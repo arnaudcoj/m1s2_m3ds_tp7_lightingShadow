@@ -21,3 +21,10 @@ Doit contenir :
 - ce que vous n'avez pas fait (et pourquoi). Précisez explicitement "tout à été fait et fonctionne parfaitement" si c'est le cas.
 - difficultés rencontrées.
 - commentaires éventuels sur le TP (points à éclaircir, longueur du sujet, etc).
+
+P3.E2.Q6.
+depthMap : fragColor.r correspond à la distance entre la source lumineuse et le pixel de l'objet le plus proche de cette source (ce qui explique pourquoi l'avion est plus sombre et la voiture plus claire)
+
+screen : fragColor.r correspond toujours à la profondeur de l'objet le plus proche de la source. texCoord.z correspond à la profondeur du pixel de l'objet que l'on veut dessiner.
+
+On vérifie si fragColor.r < texCoord.z, si c'est le cas, c'est qu'il y a un objet entre la source lumineuse et le pixel, on ne l'éclaire donc pas.

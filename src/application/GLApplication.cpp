@@ -149,9 +149,12 @@ void GLApplication::initialize() {
 
     _rtt.create(256,256);       // création d'un Frame Buffer de 256x256 pixels
 
-    _rtt.rtt(&_depthTexture,0); // 1er paramètre = Color Buffer des pixels (donc ici la texture _depthTexture; la texture porte donc mal son nom, *pour l'instant*, puisqu'elle va être affectée avec la couleur des pixels tracés),
+    //_rtt.rtt(&_depthTexture,0); // 1er paramètre = Color Buffer des pixels (donc ici la texture _depthTexture; la texture porte donc mal son nom, *pour l'instant*, puisqu'elle va être affectée avec la couleur des pixels tracés),
     // 2ième paramètre = Depth Buffer des pixels (0 signifie qu'un depth buffer par défaut est mis en place)
     // le Color Buffer et le Depth Buffer les dimensions fixées par _rtt.create(256,256)
+
+    //P3E2Q5
+    _rtt.rtt(0, &_depthTexture);
 
     _depthTexture.wrap(GL_CLAMP_TO_BORDER);
     _depthTexture.filterLinear();
@@ -476,7 +479,10 @@ void GLApplication::lightPosition() { // should be called after camera setup in 
 void GLApplication::drawIncrustation() {
     p3d::ambientColor=Vector4(1,1,1,1);
 
-    p3d::drawTexture(_depthTexture,0,0,0.3,0.3,false);
+    //p3d::drawTexture(_depthTexture,0,0,0.3,0.3,false);
+
+    //P3E2Q5
+    p3d::drawTexture(_depthTexture,0,0,0.3,0.3,true);
 
 }
 
