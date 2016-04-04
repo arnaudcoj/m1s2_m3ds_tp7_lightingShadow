@@ -20,7 +20,7 @@ void main() {
     //P3E2Q7
     //incompatible ?
     //fragColor=1.0-clamp(50.0*(1.0-fragColor),0,1);
-    if(texCoord.z <= fragColor.r)
+    if(texCoord.z-0.001 <= fragColor.r)
       fragColor = vec4(1.,1.,1.,1.);
     else
       fragColor = vec4(0.,0.,0.,1.);
