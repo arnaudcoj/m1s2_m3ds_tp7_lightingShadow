@@ -15,6 +15,9 @@ void main() {
   texCoord.xyz += 1.;
   texCoord.xyz /= 2.;
 
-
-  fragColor=texture(image1,texCoord.xy);
+  //P3E1Q11
+  if(texCoord.z>=-1 && texCoord.z<=1)
+    fragColor=texture(image1,texCoord.xy);
+  else
+    fragColor=vec4(0,0,0,0);
 }
